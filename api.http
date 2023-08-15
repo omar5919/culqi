@@ -1,0 +1,30 @@
+### registrar usuario
+POST http://localhost:3000
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "ana",
+  "email": "ana@gmail.com"
+}
+
+### obtener todo
+GET http://localhost:3000/todo
+Accept: application/json
+
+### insertar mongo
+POST http://localhost:3000/tokens
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "oaloarte@gmail.com",
+  "card_number": "41111111111",
+  "cvv": "123",
+  "expiration_year": "2025",
+  "expiration_month": "09"
+}
+
+### obtener todo mongo
+GET http://localhost:3000/obtenerMongo
+Accept: application/json

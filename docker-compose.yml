@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  culqi_mongo:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_DATABASE: culqi
+      MONGO_INITDB_ROOT_USERNAME: culqi
+      MONGO_INITDB_ROOT_PASSWORD: culqi
+      INIT_WAIT_SEC: 3
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+  culqi_db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=culqi
+      - POSTGRES_USER=culqi
+      - POSTGRES_PASSWORD=culqi
+    ports:
+      - '5432:5432'
+    volumes:
+      - /var/lib/postgresql
+volumes:
+  data_db:
+    external: true
+  mongodb_data_container:
